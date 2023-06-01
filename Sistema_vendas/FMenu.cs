@@ -166,13 +166,13 @@ namespace Sistema_vendas
 
         private void toolStripButton1_Click(object sender, EventArgs e)
         {
-            FVenda tela = new FVenda();
+            FCompra tela = new FCompra();
             //Ajusta as propriedades de borda da janela
             tela.TopLevel = false;
             tela.FormBorderStyle = FormBorderStyle.None;
 
             //Adiciona uma nova aba na PageControl
-            tabControl1.TabPages.Add("Vendas");
+            tabControl1.TabPages.Add("Compras");
             //Identifica quantas abas existem
             int abas = tabControl1.TabPages.Count;
             //Adiciona o formulário na nova aba criada

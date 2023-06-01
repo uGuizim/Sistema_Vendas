@@ -43,9 +43,9 @@ namespace Sistema_vendas.view
             txtIdProduto2.Enabled = false;
 
             //desabilita os botoes
-            botaoSalvar.Enabled = false;
-            botaoEditar.Enabled = false;
-            botaoExcluir.Enabled = false;
+            botaoSalvar2.Enabled = false;
+            botaoEditar2.Enabled = false;
+            botaoExcluir2.Enabled = false;
 
             botaoAdicionar2.Enabled = false;
             botaoRemover2.Enabled = false;
@@ -60,7 +60,7 @@ namespace Sistema_vendas.view
             //txtValorTotal2.Enabled = false;
             txtIdProduto2.Enabled = true;
 
-            botaoSalvar.Enabled = true;
+            botaoSalvar2.Enabled = true;
 
 
             botaoAdicionar2.Enabled = true;
@@ -95,7 +95,7 @@ namespace Sistema_vendas.view
             tabControl.TabPages.Remove(tabpage);
         }
 
-        private void botaoNovo_Click(object sender, EventArgs e)
+        private void botaoNovo2_Click(object sender, EventArgs e)
         {
             habilitarCampos();
             limparCampos();
@@ -106,7 +106,7 @@ namespace Sistema_vendas.view
             txtDataVenda.Text = DateTime.Now.ToString("dd/MM/yyyy");
         }
 
-        private void botaoSalvar_Click(object sender, EventArgs e)
+        private void botaoSalvar2_Click(object sender, EventArgs e)
         {
             Compra obj = new Compra();
 
@@ -152,7 +152,7 @@ namespace Sistema_vendas.view
             tabControl2.SelectedTab = tabPesquisa;
         }
 
-        private void botaoExcluir_Click(object sender, EventArgs e)
+        private void botaoExcluir2_Click(object sender, EventArgs e)
         {
             DialogResult dialogResult =
             MessageBox.Show
@@ -168,13 +168,13 @@ namespace Sistema_vendas.view
                 controller.excluirCompra(obj);
                 GridProdutos2.DataSource = controller.listarCompras();
                 limparCampos();
-                botaoEditar.Enabled = false;
-                botaoExcluir.Enabled = false;
+                botaoEditar2.Enabled = false;
+                botaoExcluir2.Enabled = false;
                 tabControl1.SelectedTab = tabPesquisa;
             }
 
         }
-        private void botaoEditar_Click(object sender, EventArgs e)
+        private void botaoEditar2_Click(object sender, EventArgs e)
         {
             habilitarCampos();
             status = "alterando";
@@ -204,8 +204,8 @@ namespace Sistema_vendas.view
             GridProdutos2.DataSource = carrinho;
 
             //habilita os botões
-            botaoEditar.Enabled = true;
-            botaoExcluir.Enabled = true;
+            botaoEditar2.Enabled = true;
+            botaoExcluir2.Enabled = true;
 
             //Vai para a aba de dados
             tabControl1.SelectedTab = tabDados;

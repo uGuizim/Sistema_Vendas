@@ -29,9 +29,9 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FCompra));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle22 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle23 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle24 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.txtValorTotal = new System.Windows.Forms.TextBox();
             this.txtValorUnitario = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
@@ -45,11 +45,11 @@
             this.txtId = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
-            this.botaoNovo = new System.Windows.Forms.ToolStripButton();
-            this.botaoSalvar = new System.Windows.Forms.ToolStripButton();
-            this.botaoExcluir = new System.Windows.Forms.ToolStripButton();
-            this.botaoEditar = new System.Windows.Forms.ToolStripButton();
-            this.botaoImprimir = new System.Windows.Forms.ToolStripButton();
+            this.botaoNovo2 = new System.Windows.Forms.ToolStripButton();
+            this.botaoSalvar2 = new System.Windows.Forms.ToolStripButton();
+            this.botaoExcluir2 = new System.Windows.Forms.ToolStripButton();
+            this.botaoEditar2 = new System.Windows.Forms.ToolStripButton();
+            this.botaoImprimir2 = new System.Windows.Forms.ToolStripButton();
             this.botaoFechar = new System.Windows.Forms.ToolStripButton();
             this.panel1 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
@@ -94,15 +94,15 @@
             this.txtId2 = new System.Windows.Forms.TextBox();
             this.label15 = new System.Windows.Forms.Label();
             this.GridProdutos2 = new System.Windows.Forms.DataGridView();
-            this.tabDados = new System.Windows.Forms.TabPage();
-            this.panel3 = new System.Windows.Forms.Panel();
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.txtIdProduto = new System.Windows.Forms.TextBox();
             this.IdProduto2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.NomeProduto = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.quantidade2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ValorUnitario2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.SubTotal2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.tabDados = new System.Windows.Forms.TabPage();
+            this.panel3 = new System.Windows.Forms.Panel();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.txtIdProduto = new System.Windows.Forms.TextBox();
             this.toolStrip1.SuspendLayout();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.GridProdutos)).BeginInit();
@@ -254,11 +254,11 @@
             this.toolStrip1.AutoSize = false;
             this.toolStrip1.BackColor = System.Drawing.Color.Gray;
             this.toolStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.botaoNovo,
-            this.botaoSalvar,
-            this.botaoExcluir,
-            this.botaoEditar,
-            this.botaoImprimir,
+            this.botaoNovo2,
+            this.botaoSalvar2,
+            this.botaoExcluir2,
+            this.botaoEditar2,
+            this.botaoImprimir2,
             this.botaoFechar});
             this.toolStrip1.Location = new System.Drawing.Point(3, 53);
             this.toolStrip1.Name = "toolStrip1";
@@ -267,54 +267,54 @@
             this.toolStrip1.TabIndex = 7;
             this.toolStrip1.Text = "toolStrip1";
             // 
-            // botaoNovo
+            // botaoNovo2
             // 
-            this.botaoNovo.Image = ((System.Drawing.Image)(resources.GetObject("botaoNovo.Image")));
-            this.botaoNovo.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
-            this.botaoNovo.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.botaoNovo.Name = "botaoNovo";
-            this.botaoNovo.Size = new System.Drawing.Size(64, 36);
-            this.botaoNovo.Text = "Novo";
-            this.botaoNovo.Click += new System.EventHandler(this.botaoNovo_Click);
+            this.botaoNovo2.Image = ((System.Drawing.Image)(resources.GetObject("botaoNovo2.Image")));
+            this.botaoNovo2.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
+            this.botaoNovo2.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.botaoNovo2.Name = "botaoNovo2";
+            this.botaoNovo2.Size = new System.Drawing.Size(64, 36);
+            this.botaoNovo2.Text = "Novo";
+            this.botaoNovo2.Click += new System.EventHandler(this.botaoNovo2_Click);
             // 
-            // botaoSalvar
+            // botaoSalvar2
             // 
-            this.botaoSalvar.Image = ((System.Drawing.Image)(resources.GetObject("botaoSalvar.Image")));
-            this.botaoSalvar.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
-            this.botaoSalvar.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.botaoSalvar.Name = "botaoSalvar";
-            this.botaoSalvar.Size = new System.Drawing.Size(66, 36);
-            this.botaoSalvar.Text = "Salvar";
-            this.botaoSalvar.Click += new System.EventHandler(this.botaoSalvar_Click);
+            this.botaoSalvar2.Image = ((System.Drawing.Image)(resources.GetObject("botaoSalvar2.Image")));
+            this.botaoSalvar2.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
+            this.botaoSalvar2.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.botaoSalvar2.Name = "botaoSalvar2";
+            this.botaoSalvar2.Size = new System.Drawing.Size(66, 36);
+            this.botaoSalvar2.Text = "Salvar";
+            this.botaoSalvar2.Click += new System.EventHandler(this.botaoSalvar2_Click);
             // 
-            // botaoExcluir
+            // botaoExcluir2
             // 
-            this.botaoExcluir.Image = ((System.Drawing.Image)(resources.GetObject("botaoExcluir.Image")));
-            this.botaoExcluir.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
-            this.botaoExcluir.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.botaoExcluir.Name = "botaoExcluir";
-            this.botaoExcluir.Size = new System.Drawing.Size(70, 36);
-            this.botaoExcluir.Text = "Excluir";
-            this.botaoExcluir.Click += new System.EventHandler(this.botaoExcluir_Click);
+            this.botaoExcluir2.Image = ((System.Drawing.Image)(resources.GetObject("botaoExcluir2.Image")));
+            this.botaoExcluir2.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
+            this.botaoExcluir2.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.botaoExcluir2.Name = "botaoExcluir2";
+            this.botaoExcluir2.Size = new System.Drawing.Size(70, 36);
+            this.botaoExcluir2.Text = "Excluir";
+            this.botaoExcluir2.Click += new System.EventHandler(this.botaoExcluir2_Click);
             // 
-            // botaoEditar
+            // botaoEditar2
             // 
-            this.botaoEditar.Image = ((System.Drawing.Image)(resources.GetObject("botaoEditar.Image")));
-            this.botaoEditar.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
-            this.botaoEditar.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.botaoEditar.Name = "botaoEditar";
-            this.botaoEditar.Size = new System.Drawing.Size(65, 36);
-            this.botaoEditar.Text = "Editar";
-            this.botaoEditar.Click += new System.EventHandler(this.botaoEditar_Click);
+            this.botaoEditar2.Image = ((System.Drawing.Image)(resources.GetObject("botaoEditar2.Image")));
+            this.botaoEditar2.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
+            this.botaoEditar2.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.botaoEditar2.Name = "botaoEditar2";
+            this.botaoEditar2.Size = new System.Drawing.Size(65, 36);
+            this.botaoEditar2.Text = "Editar";
+            this.botaoEditar2.Click += new System.EventHandler(this.botaoEditar2_Click);
             // 
-            // botaoImprimir
+            // botaoImprimir2
             // 
-            this.botaoImprimir.Image = ((System.Drawing.Image)(resources.GetObject("botaoImprimir.Image")));
-            this.botaoImprimir.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
-            this.botaoImprimir.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.botaoImprimir.Name = "botaoImprimir";
-            this.botaoImprimir.Size = new System.Drawing.Size(81, 36);
-            this.botaoImprimir.Text = "Imprimir";
+            this.botaoImprimir2.Image = ((System.Drawing.Image)(resources.GetObject("botaoImprimir2.Image")));
+            this.botaoImprimir2.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
+            this.botaoImprimir2.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.botaoImprimir2.Name = "botaoImprimir2";
+            this.botaoImprimir2.Size = new System.Drawing.Size(81, 36);
+            this.botaoImprimir2.Text = "Imprimir";
             // 
             // botaoFechar
             // 
@@ -455,10 +455,10 @@
             // quantidade
             // 
             this.quantidade.DataPropertyName = "quantidade";
-            dataGridViewCellStyle22.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            dataGridViewCellStyle22.Format = "N2";
-            dataGridViewCellStyle22.NullValue = null;
-            this.quantidade.DefaultCellStyle = dataGridViewCellStyle22;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            dataGridViewCellStyle1.Format = "N2";
+            dataGridViewCellStyle1.NullValue = null;
+            this.quantidade.DefaultCellStyle = dataGridViewCellStyle1;
             this.quantidade.HeaderText = "Quantidade";
             this.quantidade.Name = "quantidade";
             this.quantidade.ReadOnly = true;
@@ -467,10 +467,10 @@
             // valor_unitario
             // 
             this.valor_unitario.DataPropertyName = "valor_unitario";
-            dataGridViewCellStyle23.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            dataGridViewCellStyle23.Format = "N2";
-            dataGridViewCellStyle23.NullValue = null;
-            this.valor_unitario.DefaultCellStyle = dataGridViewCellStyle23;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            dataGridViewCellStyle2.Format = "N2";
+            dataGridViewCellStyle2.NullValue = null;
+            this.valor_unitario.DefaultCellStyle = dataGridViewCellStyle2;
             this.valor_unitario.HeaderText = "Valor Unitário";
             this.valor_unitario.Name = "valor_unitario";
             this.valor_unitario.ReadOnly = true;
@@ -479,10 +479,10 @@
             // subtotal
             // 
             this.subtotal.DataPropertyName = "subtotal";
-            dataGridViewCellStyle24.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            dataGridViewCellStyle24.Format = "N2";
-            dataGridViewCellStyle24.NullValue = null;
-            this.subtotal.DefaultCellStyle = dataGridViewCellStyle24;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            dataGridViewCellStyle3.Format = "N2";
+            dataGridViewCellStyle3.NullValue = null;
+            this.subtotal.DefaultCellStyle = dataGridViewCellStyle3;
             this.subtotal.HeaderText = "Subtotal";
             this.subtotal.Name = "subtotal";
             this.subtotal.ReadOnly = true;
@@ -812,6 +812,41 @@
             this.GridProdutos2.Size = new System.Drawing.Size(1178, 401);
             this.GridProdutos2.TabIndex = 58;
             // 
+            // IdProduto2
+            // 
+            this.IdProduto2.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.IdProduto2.HeaderText = "Id Prod.";
+            this.IdProduto2.Name = "IdProduto2";
+            this.IdProduto2.ReadOnly = true;
+            // 
+            // NomeProduto
+            // 
+            this.NomeProduto.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.NomeProduto.HeaderText = "Nome Produto";
+            this.NomeProduto.Name = "NomeProduto";
+            this.NomeProduto.ReadOnly = true;
+            // 
+            // quantidade2
+            // 
+            this.quantidade2.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.quantidade2.HeaderText = "Quantidade";
+            this.quantidade2.Name = "quantidade2";
+            this.quantidade2.ReadOnly = true;
+            // 
+            // ValorUnitario2
+            // 
+            this.ValorUnitario2.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.ValorUnitario2.HeaderText = "Valor Unitario";
+            this.ValorUnitario2.Name = "ValorUnitario2";
+            this.ValorUnitario2.ReadOnly = true;
+            // 
+            // SubTotal2
+            // 
+            this.SubTotal2.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.SubTotal2.HeaderText = "Sub Total";
+            this.SubTotal2.Name = "SubTotal2";
+            this.SubTotal2.ReadOnly = true;
+            // 
             // tabDados
             // 
             this.tabDados.Controls.Add(this.GridProdutos);
@@ -876,41 +911,6 @@
             this.txtIdProduto.TabIndex = 52;
             this.txtIdProduto.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
-            // IdProduto2
-            // 
-            this.IdProduto2.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.IdProduto2.HeaderText = "Id Prod.";
-            this.IdProduto2.Name = "IdProduto2";
-            this.IdProduto2.ReadOnly = true;
-            // 
-            // NomeProduto
-            // 
-            this.NomeProduto.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.NomeProduto.HeaderText = "Nome Produto";
-            this.NomeProduto.Name = "NomeProduto";
-            this.NomeProduto.ReadOnly = true;
-            // 
-            // quantidade2
-            // 
-            this.quantidade2.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.quantidade2.HeaderText = "Quantidade";
-            this.quantidade2.Name = "quantidade2";
-            this.quantidade2.ReadOnly = true;
-            // 
-            // ValorUnitario2
-            // 
-            this.ValorUnitario2.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.ValorUnitario2.HeaderText = "Valor Unitario";
-            this.ValorUnitario2.Name = "ValorUnitario2";
-            this.ValorUnitario2.ReadOnly = true;
-            // 
-            // SubTotal2
-            // 
-            this.SubTotal2.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.SubTotal2.HeaderText = "Sub Total";
-            this.SubTotal2.Name = "SubTotal2";
-            this.SubTotal2.ReadOnly = true;
-            // 
             // FCompra
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
@@ -964,11 +964,11 @@
         private System.Windows.Forms.TextBox txtId;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.ToolStrip toolStrip1;
-        private System.Windows.Forms.ToolStripButton botaoNovo;
-        private System.Windows.Forms.ToolStripButton botaoSalvar;
-        private System.Windows.Forms.ToolStripButton botaoExcluir;
-        private System.Windows.Forms.ToolStripButton botaoEditar;
-        private System.Windows.Forms.ToolStripButton botaoImprimir;
+        private System.Windows.Forms.ToolStripButton botaoNovo2;
+        private System.Windows.Forms.ToolStripButton botaoSalvar2;
+        private System.Windows.Forms.ToolStripButton botaoExcluir2;
+        private System.Windows.Forms.ToolStripButton botaoEditar2;
+        private System.Windows.Forms.ToolStripButton botaoImprimir2;
         private System.Windows.Forms.ToolStripButton botaoFechar;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label label1;

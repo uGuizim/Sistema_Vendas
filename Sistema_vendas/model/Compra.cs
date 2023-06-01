@@ -8,7 +8,7 @@ using static System.Windows.Forms.VisualStyles.VisualStyleElement.ListView;
 
 namespace Sistema_vendas.model
 {
-    internal class Compra
+    public class Compra
     {
         public int idcompra { get; set; }
         public int idfornecedor { get; set; }

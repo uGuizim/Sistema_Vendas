@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Sistema_vendas.model
 {
-    internal class CompraProduto
+    public class CompraProduto
     {
         //Declaração dos atributos
 
