@@ -179,6 +179,141 @@ namespace Sistema_vendas.view
             habilitarCampos();
             status = "alterando";
         }
+        private void GridProdutos2_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            //if para evitar o bug do botao novo
+            if (status == "inserindo")
+            {
+                desabilitarCampos();
+                status = "";
+            }
+
+            //Pegar os dados da grid para os campos
+            txtId2.Text = GridProdutos2.CurrentRow.Cells[0].Value.ToString();
+            txtDataCompra.Text = GridProdutos2.CurrentRow.Cells[1].Value.ToString();
+            txtIdFornecedor.Text = GridProdutos2.CurrentRow.Cells[2].Value.ToString();
+            label10.Text = GridProdutos2.CurrentRow.Cells[3].Value.ToString();
+            txtValorTotal2.Text = GridProdutos2.CurrentRow.Cells[4].Value.ToString();
+
+            total = decimal.Parse(txtValorTotal.Text);
+
+            //buscar itens da venda
+            compraController controller = new compraController();
+
+            carrinho = controller.listarItensCompra(int.Parse(txtId2.Text));
+            GridProdutos2.DataSource = carrinho;
+
+            //habilita os botões
+            botaoEditar.Enabled = true;
+            botaoExcluir.Enabled = true;
+
+            //Vai para a aba de dados
+            tabControl1.SelectedTab = tabDados;
+        }
+        private void botaoPesquisar_Click(object sender, EventArgs e)
+        {
+            string nome = "%" + textBox1.Text + "%";
+
+            compraController controller = new compraController();
+            GridProdutos2.DataSource = controller.buscaPorNome(nome);
+
+            if (GridProdutos2.Rows.Count == 0)
+            {
+                MessageBox.Show("Nenhuma compra encontrada para este fornecedor");
+                GridProdutos2.DataSource = controller.listarCompras();
+            }
+        }
+        private void botaoPesquisaFornecedor_Click(object sender, EventArgs e)
+        {
+            //cria a janela de pesquisa cliente
+            FPesquisaFornecedor pesquisa = new FPesquisaFornecedor();
+            //chama a tela de pesquisa
+            pesquisa.ShowDialog();
+
+            //O Id do Fornecedor selecionado é enviado para o campo txtIdFornecedor/nomeCliente
+            txtIdFornecedor.Text = pesquisa.selecionado.idfornecedor.ToString();
+            labelFornecedor.Text = pesquisa.selecionado.nome;
+            //Destroi o objeto (janela) da memória
+            pesquisa.Dispose();
+            //Coloca o foco no campo de data
+            txtDataCompra.Focus();
+        }
+        private void botaoPesquisarProduto2_Click(object sender, EventArgs e)
+        {
+            FPesquisaProduto pesquisa = new FPesquisaProduto();
+            pesquisa.ShowDialog();
+            txtIdProduto2.Text = pesquisa.selecionado.idproduto.ToString();
+            label10.Text = pesquisa.selecionado.nome;
+            txtQuantidade2.Text = "1,00";
+            txtValorUnitario2.Text = pesquisa.selecionado.valor_unitario.ToString();
+            pesquisa.Dispose();
+            txtQuantidade2.Focus();
+        }
+        private void txtQuantidade2_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) && (e.KeyChar != ','))
+            {
+                e.Handled = true;
+            }
+
+            if ((e.KeyChar == ',') && ((sender as System.Windows.Forms.TextBox).Text.IndexOf(',') > -1))
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void txtValorUnitario2_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) && (e.KeyChar != ','))
+            {
+                e.Handled = true;
+            }
+
+            if ((e.KeyChar == ',') && ((sender as System.Windows.Forms.TextBox).Text.IndexOf(',') > -1))
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void txtIdFornecedor_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) && (e.KeyChar != ','))
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void txtIdProduto_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) && (e.KeyChar != ','))
+            {
+                e.Handled = true;
+            }
+        }
+        private void txtQuantidade2_Leave(object sender, EventArgs e)
+        {
+            if (txtQuantidade2.Text == "")
+            {
+                txtQuantidade2.Text = "0,00";
+            }
+            else
+            {
+                double a = double.Parse(txtQuantidade2.Text);
+                txtQuantidade2.Text = String.Format("{0:N2}", a);
+            }
+        }
+        private void txtValorUnitario2_Leave(object sender, EventArgs e)
+        {
+            if (txtValorUnitario2.Text == "")
+            {
+                txtValorUnitario2.Text = "0,00";
+            }
+            else
+            {
+                double a = double.Parse(txtValorUnitario2.Text);
+                txtValorUnitario2.Text = String.Format("{0:N2}", a);
+            }
+        }
         private void txtIdFornecedor_Leave(object sender, EventArgs e)
         {
             //Verifica se o campo não está vazio
