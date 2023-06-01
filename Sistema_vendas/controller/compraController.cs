@@ -6,9 +6,12 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using MySql.Data.MySqlClient;
+using Sistema_vendas;
 using Sistema_vendas.model;
+using Sistema_vendas.view;
 
-namespace Sistema_vendas.controller
+
+namespace Sistema_compras.controller
 {
 
     public class compraController
@@ -39,7 +42,6 @@ namespace Sistema_vendas.controller
                 conexao.Open();
                 //Cadastra a compra
                 executacmd.ExecuteNonQuery();
-
 
                 //Busca o ID da comprastrada para adicionar aos produtos
                 sql = "select MAX(idcompra) as idcompra from compra";

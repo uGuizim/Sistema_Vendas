@@ -1,4 +1,5 @@
 ﻿using Google.Protobuf.WellKnownTypes;
+using Sistema_compras.controller;
 using Sistema_vendas.controller;
 using Sistema_vendas.model;
 using System;
@@ -171,12 +172,113 @@ namespace Sistema_vendas.view
                 botaoExcluir.Enabled = false;
                 tabControl1.SelectedTab = tabPesquisa;
             }
-        }
 
+        }
         private void botaoEditar_Click(object sender, EventArgs e)
         {
             habilitarCampos();
             status = "alterando";
+        }
+        private void txtIdFornecedor_Leave(object sender, EventArgs e)
+        {
+            //Verifica se o campo não está vazio
+            if (txtIdFornecedor.Text != "")
+            {
+                fornecedorController controller
+                    = new fornecedorController();
+                int id = int.Parse(txtIdFornecedor.Text);
+                //Faz uma busca do cliente pelo código
+                Fornecedor F = controller.buscaPorID(id);
+                if (F != null) //Se achou
+                {
+                    //Coloca o nome do cliente no label
+                    labelFornecedor.Text = F.nome;
+                }
+                else //se não achou
+                {
+                    //Limpa os campos
+                    txtIdFornecedor.Text = String.Empty;
+                    label10.Text = String.Empty;
+                }
+                txtDataCompra.Focus();
+            }
+        }
+
+        private void txtIdProduto2_Leave(object sender, EventArgs e)
+        {
+            if (txtIdProduto2.Text != "")
+            {
+                produtoController controller
+                    = new produtoController();
+                int id = int.Parse(txtIdProduto2.Text);
+                Produto f = controller.buscaPorID(id);
+                if (f != null)
+                {
+                    label10.Text = f.nome;
+                    txtQuantidade2.Text = "1,00";
+                    txtValorUnitario2.Text = f.valor_unitario.ToString();
+                }
+                else
+                {
+                    txtIdProduto2.Text = String.Empty;
+                    label10.Text = String.Empty;
+                    txtQuantidade2.Text = String.Empty;
+                    txtValorUnitario2.Text = String.Empty;
+                }
+                txtQuantidade2.Focus();
+            }
+        }
+
+        private void botaoAdicionar_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                //Botão adicionar item
+
+                decimal subtotal2 = decimal.Parse(txtQuantidade2.Text) * decimal.Parse(txtValorUnitario2.Text);
+
+                total += subtotal2;
+
+                carrinho.Rows.Add(int.Parse(txtIdProduto2.Text), labelNomeProduto.Text, decimal.Parse(txtQuantidade2.Text), decimal.Parse(txtValorUnitario2.Text), subtotal2);
+
+
+                txtValorTotal.Text = total.ToString("N2");
+
+                //Limpar os campos
+                txtIdProduto2.Text = String.Empty;
+                label10.Text = String.Empty;
+                txtQuantidade2.Text = String.Empty; ;
+                txtValorUnitario2.Text = String.Empty;
+
+                txtIdProduto2.Focus();
+            }
+            catch (Exception erro)
+            {
+                MessageBox.Show("Erro ao adicionar o Produto: " + erro);
+            }
+        }
+        private void botaoRemover_Click(object sender, EventArgs e)
+        {
+            DialogResult dialogResult =
+            MessageBox.Show
+             ("Tem certeza que deseja excluir o produto " + GridProdutos2.CurrentRow.Cells[1].Value.ToString() + "?",
+             "Pergunta", MessageBoxButtons.YesNo);
+            if (dialogResult == DialogResult.Yes)
+            {
+                decimal subtotal2 = decimal.Parse(GridProdutos2.CurrentRow.Cells[4].Value.ToString());
+
+                int indice = GridProdutos2.CurrentRow.Index;
+                DataRow linha = carrinho.Rows[indice];
+
+                carrinho.Rows.Remove(linha);
+                carrinho.AcceptChanges();
+
+                total -= subtotal2;
+
+                txtValorTotal2.Text = total.ToString("N2"); ;
+
+                MessageBox.Show("Item Removido com sucesso!");
+            }
         }
     }
 }

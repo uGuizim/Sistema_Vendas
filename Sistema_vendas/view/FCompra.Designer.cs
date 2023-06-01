@@ -29,9 +29,9 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FCompra));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle22 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle23 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle24 = new System.Windows.Forms.DataGridViewCellStyle();
             this.txtValorTotal = new System.Windows.Forms.TextBox();
             this.txtValorUnitario = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
@@ -98,6 +98,11 @@
             this.panel3 = new System.Windows.Forms.Panel();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.txtIdProduto = new System.Windows.Forms.TextBox();
+            this.IdProduto2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.NomeProduto = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.quantidade2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ValorUnitario2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.SubTotal2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.toolStrip1.SuspendLayout();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.GridProdutos)).BeginInit();
@@ -450,10 +455,10 @@
             // quantidade
             // 
             this.quantidade.DataPropertyName = "quantidade";
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            dataGridViewCellStyle1.Format = "N2";
-            dataGridViewCellStyle1.NullValue = null;
-            this.quantidade.DefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle22.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            dataGridViewCellStyle22.Format = "N2";
+            dataGridViewCellStyle22.NullValue = null;
+            this.quantidade.DefaultCellStyle = dataGridViewCellStyle22;
             this.quantidade.HeaderText = "Quantidade";
             this.quantidade.Name = "quantidade";
             this.quantidade.ReadOnly = true;
@@ -462,10 +467,10 @@
             // valor_unitario
             // 
             this.valor_unitario.DataPropertyName = "valor_unitario";
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            dataGridViewCellStyle2.Format = "N2";
-            dataGridViewCellStyle2.NullValue = null;
-            this.valor_unitario.DefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle23.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            dataGridViewCellStyle23.Format = "N2";
+            dataGridViewCellStyle23.NullValue = null;
+            this.valor_unitario.DefaultCellStyle = dataGridViewCellStyle23;
             this.valor_unitario.HeaderText = "Valor Unitário";
             this.valor_unitario.Name = "valor_unitario";
             this.valor_unitario.ReadOnly = true;
@@ -474,10 +479,10 @@
             // subtotal
             // 
             this.subtotal.DataPropertyName = "subtotal";
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            dataGridViewCellStyle3.Format = "N2";
-            dataGridViewCellStyle3.NullValue = null;
-            this.subtotal.DefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle24.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            dataGridViewCellStyle24.Format = "N2";
+            dataGridViewCellStyle24.NullValue = null;
+            this.subtotal.DefaultCellStyle = dataGridViewCellStyle24;
             this.subtotal.HeaderText = "Subtotal";
             this.subtotal.Name = "subtotal";
             this.subtotal.ReadOnly = true;
@@ -735,9 +740,9 @@
             this.labelFornecedor.AutoSize = true;
             this.labelFornecedor.Location = new System.Drawing.Point(264, 35);
             this.labelFornecedor.Name = "labelFornecedor";
-            this.labelFornecedor.Size = new System.Drawing.Size(58, 20);
+            this.labelFornecedor.Size = new System.Drawing.Size(91, 20);
             this.labelFornecedor.TabIndex = 52;
-            this.labelFornecedor.Text = "Cliente";
+            this.labelFornecedor.Text = "Fornecedor";
             this.labelFornecedor.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // txtIdFornecedor
@@ -793,13 +798,18 @@
             this.GridProdutos2.AllowUserToAddRows = false;
             this.GridProdutos2.AllowUserToDeleteRows = false;
             this.GridProdutos2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.GridProdutos2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.GridProdutos2.Location = new System.Drawing.Point(4, 5);
+            this.GridProdutos2.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.IdProduto2,
+            this.NomeProduto,
+            this.quantidade2,
+            this.ValorUnitario2,
+            this.SubTotal2});
+            this.GridProdutos2.Location = new System.Drawing.Point(4, 247);
             this.GridProdutos2.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.GridProdutos2.Name = "GridProdutos2";
             this.GridProdutos2.ReadOnly = true;
             this.GridProdutos2.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.GridProdutos2.Size = new System.Drawing.Size(1178, 643);
+            this.GridProdutos2.Size = new System.Drawing.Size(1178, 401);
             this.GridProdutos2.TabIndex = 58;
             // 
             // tabDados
@@ -865,6 +875,41 @@
             this.txtIdProduto.Size = new System.Drawing.Size(142, 26);
             this.txtIdProduto.TabIndex = 52;
             this.txtIdProduto.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            // 
+            // IdProduto2
+            // 
+            this.IdProduto2.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.IdProduto2.HeaderText = "Id Prod.";
+            this.IdProduto2.Name = "IdProduto2";
+            this.IdProduto2.ReadOnly = true;
+            // 
+            // NomeProduto
+            // 
+            this.NomeProduto.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.NomeProduto.HeaderText = "Nome Produto";
+            this.NomeProduto.Name = "NomeProduto";
+            this.NomeProduto.ReadOnly = true;
+            // 
+            // quantidade2
+            // 
+            this.quantidade2.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.quantidade2.HeaderText = "Quantidade";
+            this.quantidade2.Name = "quantidade2";
+            this.quantidade2.ReadOnly = true;
+            // 
+            // ValorUnitario2
+            // 
+            this.ValorUnitario2.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.ValorUnitario2.HeaderText = "Valor Unitario";
+            this.ValorUnitario2.Name = "ValorUnitario2";
+            this.ValorUnitario2.ReadOnly = true;
+            // 
+            // SubTotal2
+            // 
+            this.SubTotal2.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.SubTotal2.HeaderText = "Sub Total";
+            this.SubTotal2.Name = "SubTotal2";
+            this.SubTotal2.ReadOnly = true;
             // 
             // FCompra
             // 
@@ -972,5 +1017,10 @@
         private System.Windows.Forms.MaskedTextBox txtDataCompra;
         private System.Windows.Forms.TextBox txtId2;
         private System.Windows.Forms.Label label15;
+        private System.Windows.Forms.DataGridViewTextBoxColumn IdProduto2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn NomeProduto;
+        private System.Windows.Forms.DataGridViewTextBoxColumn quantidade2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ValorUnitario2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn SubTotal2;
     }
 }
